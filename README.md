@@ -1,4 +1,4 @@
-- 🚀 Just Launched: AI-Powered Research Paper Summarization Tool! 🔍📚
+ 🚀 Just Launched: AI-Powered Research Paper Summarization Tool! 🔍📚 <br />
 - Built with 💻 Python, Streamlit, and LangChain, this app transforms complex research papers into clear, customized summaries — tailored for different learning styles and depths of understanding.
 - This app delivers precise, structured summaries of cutting-edge AI papers like:
 📄 Attention Is All You Need
