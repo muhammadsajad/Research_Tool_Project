@@ -20,7 +20,7 @@ load_dotenv()
 
 
 
-st.header('Research Tool')
+st.header('Paper Summarization Tool')
 
 #user_input=st.text_input('Enter Your Prompt')
 
