@@ -9,4 +9,4 @@ This app delivers precise, structured summaries of cutting-edge AI papers like: 
 🔗 https://papersummarizer-sajad.streamlit.app/ <br />
  👨‍💻 Built by: Muhammad Sajad <br />
  Let me know what you think! Feedback and collaboration ideas are welcome. 🙌 <br />
-#AI #MachineLearning #LangChain #Streamlit #DeepLearning #ResearchSimplified #AIEducation #NLP #GenerativeAI #AcademicTools #Python <br />
+##AI #MachineLearning #LangChain #Streamlit #DeepLearning #ResearchSimplified #AIEducation #NLP #GenerativeAI #AcademicTools #Python <br />
