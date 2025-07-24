@@ -1,28 +1,17 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-from dotenv import load_dotenv
 import streamlit as st 
 from langchain_core.prompts import PromptTemplate, load_prompt
 
-api_key=st.secrets["GOOGLE_API_KEY"]
 
-model=ChatGoogleGenerativeAI(model='gemini-1.5-flash',GOOGLE_API_KEY=api_key)
-# llm = HuggingFaceEndpoint(
-#     repo_id="deepseek-ai/DeepSeek-R1-0528",
-#     task="text-generation",
-#     HUGGINGFACEHUB_API_TOKEN=api_key
-    
-# )
+model=ChatGoogleGenerativeAI(model='gemini-1.5-flash',GOOGLE_API_KEY=st.secrets["GOOGLE_API_KEY"])
+
 
 # loading the template from json file
 template=load_prompt('template.json')
 
-load_dotenv()
-
-
 
 st.header('Paper Summarization Tool')
 
-#user_input=st.text_input('Enter Your Prompt')
 
 
 # Creating selectbox
@@ -31,11 +20,6 @@ paper_input=st.selectbox("Select Research Paper Name",["Attenttion Is All You Ne
 style_input=st.selectbox("Select Expanation Style",["Beginner-Friendly","Technical","Code-Oriented","Mathematical"])
 
 length_input=st.selectbox("Select Explanation Length",["Short(1-2 paragraphs)","Medium (3-5 paragraphs)","Long (detailed explanation)"])
-
-
-
-
-
 
 
 #Creating Button
