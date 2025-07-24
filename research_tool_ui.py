@@ -18,7 +18,7 @@ template=load_prompt('template.json')
 
 load_dotenv()
 
-model = ChatHuggingFace(llm=llm)
+
 
 st.header('Research Tool')
 
