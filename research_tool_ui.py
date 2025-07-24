@@ -8,7 +8,7 @@ api_key=st.secrets["HuggingFace_API_Key"]
 llm = HuggingFaceEndpoint(
     repo_id="deepseek-ai/DeepSeek-R1-0528",
     task="text-generation",
-    huggingfacehub_api_token=api_key
+    HUGGINGFACEHUB_API_TOKEN=api_key
     
 )
 
