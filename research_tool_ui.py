@@ -2,20 +2,15 @@ from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
 import streamlit as st 
 from langchain_core.prompts import PromptTemplate, load_prompt
-from huggingface_hub.utils import HfHubHTTPError
 
-api_key=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+api_key=st.secrets["HuggingFace_API_Key"]
 
-try:
-    llm = HuggingFaceEndpoint(
-        repo_id="deepseek-ai/DeepSeek-R1-0528",
-        task="text-generation",
-        HUGGINGFACEHUB_API_TOKEN=api_key
-        
-    )
-
-except HfHubHTTPError as e:
-    st.error(f"HuggingFace error: {e}")
+llm = HuggingFaceEndpoint(
+    repo_id="deepseek-ai/DeepSeek-R1-0528",
+    task="text-generation",
+    HUGGINGFACEHUB_API_TOKEN=api_key
+    
+)
 
 # loading the template from json file
 template=load_prompt('template.json')
@@ -31,7 +26,7 @@ st.header('Research Tool')
 
 # Creating selectbox
 paper_input=st.selectbox("Select Research Paper Name",["Attenttion Is All You Need ","BERT: Pre-training of Deep Bidirection Transformers ","GPT-3: Language Models are Few-Shot Learners","Diffusion Models Beat GANs on Image Synthesis"])
-#paper_input=st.text_input('Enter Your Paper Name. Please only Enter Scientific paper Names.')
+
 style_input=st.selectbox("Select Expanation Style",["Beginner-Friendly","Technical","Code-Oriented","Mathematical"])
 
 length_input=st.selectbox("Select Explanation Length",["Short(1-2 paragraphs)","Medium (3-5 paragraphs)","Long (detailed explanation)"])
