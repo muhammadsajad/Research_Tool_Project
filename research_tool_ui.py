@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import streamlit as st 
 from langchain_core.prompts import PromptTemplate, load_prompt
 
-api_key=st.secrets["HuggingFace_API_Key"]
+api_key=st.secrets["GOOGLE_API_KEY"]
 
 model=ChatGoogleGenerativeAI(model='gemini-1.5-flash',GOOGLE_API_KEY=api_key)
 # llm = HuggingFaceEndpoint(
