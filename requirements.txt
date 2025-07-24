@@ -2,10 +2,9 @@
 langchain
 langchain-core
 
-# Hugging Face Integration
-langchain-huggingface
-transformers
-huggingface-hub
+# Google Gemini (PaLM) Integration
+langchain-google-genai
+google-generativeai
 
 # Environment Variable Management
 python-dotenv
