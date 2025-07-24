@@ -2,15 +2,20 @@ from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
 import streamlit as st 
 from langchain_core.prompts import PromptTemplate, load_prompt
+from huggingface_hub.utils import HfHubHTTPError
 
 api_key=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
-llm = HuggingFaceEndpoint(
-    repo_id="deepseek-ai/DeepSeek-R1-0528",
-    task="text-generation",
-    HUGGINGFACEHUB_API_TOKEN=api_key
-    
-)
+try:
+    llm = HuggingFaceEndpoint(
+        repo_id="deepseek-ai/DeepSeek-R1-0528",
+        task="text-generation",
+        HUGGINGFACEHUB_API_TOKEN=api_key
+        
+    )
+
+except HfHubHTTPError as e:
+    st.error(f"HuggingFace error: {e}")
 
 # loading the template from json file
 template=load_prompt('template.json')
