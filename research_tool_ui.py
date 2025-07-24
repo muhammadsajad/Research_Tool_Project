@@ -1,16 +1,17 @@
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import streamlit as st 
 from langchain_core.prompts import PromptTemplate, load_prompt
 
 api_key=st.secrets["HuggingFace_API_Key"]
 
-llm = HuggingFaceEndpoint(
-    repo_id="deepseek-ai/DeepSeek-R1-0528",
-    task="text-generation",
-    HUGGINGFACEHUB_API_TOKEN=api_key
+model=ChatGoogleGenerativeAI(model='gemini-1.5-flash',GOOGLE_API_KEY=api_key)
+# llm = HuggingFaceEndpoint(
+#     repo_id="deepseek-ai/DeepSeek-R1-0528",
+#     task="text-generation",
+#     HUGGINGFACEHUB_API_TOKEN=api_key
     
-)
+# )
 
 # loading the template from json file
 template=load_prompt('template.json')
