@@ -3,7 +3,7 @@ import streamlit as st
 from langchain_core.prompts import PromptTemplate, load_prompt
 
 
-model=ChatGoogleGenerativeAI(model='gemini-1.5-flash',GOOGLE_API_KEY=st.secrets["GOOGLE_API_KEY"])
+model=ChatGoogleGenerativeAI(model='gemini-2.5-flash',GOOGLE_API_KEY=st.secrets["GOOGLE_API_KEY"])
 
 
 # loading the template from json file
